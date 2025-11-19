@@ -1,0 +1,75 @@
+/* Remove global body edits — keep it safe for your whole site */
+
+/* Container for stacking carousels vertically */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  gap: 20px; /* space between carousels */
+  padding: 40px 0;
+  /* background: #111; keeps it dark but local */
+  background: rgba(73, 73, 73, 0.35);
+  backdrop-filter: blur(2px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.scroll {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 700px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+
+/* Animation logic */
+.scroll div {
+  white-space: nowrap;
+  animation: animate var(--t) linear infinite;
+}
+
+.scroll div:nth-child(2) {
+  animation: animate2 var(--t) linear infinite;
+  animation-delay: calc(var(--t) / -2);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.scroll div span {
+  display: inline-flex;
+  margin: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  /* color: #fff; */
+  color: rgba(29, 29, 29, 0.85);
+  background: rgba(255, 254, 254, 0.6);
+  backdrop-filter: blur(5px);
+  font-weight:500;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.scroll div span:hover {
+  background: #4caf50;
+  /* background: rgba(255, 255, 255, 0.2); */
+  cursor: pointer;
+}
