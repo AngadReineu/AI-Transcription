@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import carVideo from "../../assets/carvideo.mp4";
+import carVideo from "../../assets/heroVideo.mp4";
 
 const HeroSection = () => {
   return (
@@ -15,7 +15,7 @@ const HeroSection = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 flex items-center">
+      <div className="absolute inset-0 bg-black/40 flex justify-end items-center">
         <div className="max-w-3xl px-8 sm:px-12 md:px-20 lg:px-28">
           <h1 className="text-white font-extrabold tracking-tight 
                          text-4xl sm:text-5xl md:text-7xl lg:text-7xl drop-shadow-xl">
