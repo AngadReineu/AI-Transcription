@@ -14,10 +14,10 @@ export default function TranscriptionPage() {
     <div className="min-h-screen bg-gradient-to-br  p-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        {/* LEFT SIDE */}
+        {/*left */}
         <div className="lg:col-span-2 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-6 border border-gray-200">
 
-          {/* Upload Form (only when no video yet) */}
+         
           {!videoUrl && (
             <UploadForm
               setVideoUrl={setVideoUrl}
@@ -26,7 +26,7 @@ export default function TranscriptionPage() {
             />
           )}
 
-          {/* After upload show video + transcript */}
+          
           {videoUrl && (
             <>
               <VideoPreview videoUrl={videoUrl} />
@@ -41,7 +41,7 @@ export default function TranscriptionPage() {
 
         </div>
 
-        {/* RIGHT SIDE AI PANEL */}
+        
         <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-6 border border-gray-200 h-fit w-fit">
           <AIFeaturePanel transcript={transcript} />
         </div>

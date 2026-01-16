@@ -38,13 +38,13 @@ export default function YouTubeTranscriptionPage() {
       const res = await axios.post("http://localhost:9000/api/youtube", { url });
 
       if (res.data && res.data.success && Array.isArray(res.data.transcript)) {
-        setTranscript(res.data.transcript); // array of { text, time? }
+        setTranscript(res.data.transcript); 
       } else {
-        setError("⚠️ Could not generate transcript.");
+        setError("Could not generate transcript.");
       }
     } catch (err) {
       console.error("YouTube transcription error:", err);
-      setError("❌ Server error — try again later.");
+      setError(" Server error — try again later.");
     } finally {
       setLoading(false);
     }

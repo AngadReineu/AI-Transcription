@@ -3,7 +3,6 @@ require("dotenv").config();
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-// Retry helper
 async function retry(fn, retries = 3, delay = 1000) {
   try {
     return await fn();

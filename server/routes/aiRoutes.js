@@ -4,8 +4,8 @@ const natural = require("natural");
 const { summarizeText } = require("../utils/gemini");
 
 const router = express.Router();
+// summary
 
-// === SUMMARY ===
 router.post("/summary", async (req, res) => {
   try {
     const { transcript } = req.body;
@@ -24,7 +24,7 @@ router.post("/summary", async (req, res) => {
   }
 });
 
-// === SENTIMENT ===
+//sentiment
 router.post("/sentiment", (req, res) => {
   try {
     const { transcript } = req.body;
@@ -42,7 +42,7 @@ router.post("/sentiment", (req, res) => {
   }
 });
 
-// === TOPICS ===
+// topic
 router.post("/topics", (req, res) => {
   try {
     const { transcript } = req.body;

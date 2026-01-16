@@ -19,7 +19,7 @@ const Carousel = () => {
 
   return (
     <div className="carousel-container">
-      {/* Each scroll bar */}
+      {/* scroll bar */}
       <div className="scroll" style={{ "--t": "20s" }}>
         <div>{items.map((tech) => <span key={tech}>{tech}</span>)}</div>
         <div>{items.map((tech) => <span key={tech + "2"}>{tech}</span>)}</div>

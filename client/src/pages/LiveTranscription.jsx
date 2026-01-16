@@ -16,16 +16,14 @@ export default function LiveTranscriptionPage() {
   const startRecording = async () => {
     try {
       setTranscript([]);
-      // Open WS first
       wsRef.current = new WebSocket("ws://localhost:9000/api/live");
       wsRef.current.binaryType = "arraybuffer";
 
       wsRef.current.onopen = async () => {
-        // get mic
+        // mic here
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         setLocalStream(stream);
 
-        // create audiocontext with target sampleRate 16000
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
         audioCtxRef.current = audioCtx;
 
@@ -39,15 +37,16 @@ export default function LiveTranscriptionPage() {
         processorRef.current = node;
 
         node.port.onmessage = (e) => {
-          // e.data is an ArrayBuffer containing Int16 PCM
+         
           if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
             wsRef.current.send(e.data);
           }
         };
 
         source.connect(node);
-        node.connect(audioCtx.destination); // required in some browsers; volume is 0 because data is int16 not audio
-
+        node.connect(audioCtx.destination); 
+        // required in some browsers; volume is 0 because data is int16 not audio
+        
         setIsRecording(true);
       };
 
@@ -86,7 +85,7 @@ export default function LiveTranscriptionPage() {
 
   useEffect(() => {
     return () => stopRecording();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   return (

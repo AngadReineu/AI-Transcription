@@ -10,7 +10,7 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 const router = express.Router();
 const upload = multer({ dest: "uploads/" });
 
-// REAL WORKING conversion for Whisper.cpp
+
 function convertToWav(inputPath) {
   return new Promise((resolve, reject) => {
     const outputPath = inputPath + ".wav";
@@ -34,7 +34,7 @@ router.post("/", upload.single("audio"), async (req, res) => {
     // Convert to WAV 16kHz mono PCM16
     const wavPath = await convertToWav(inputPath);
 
-    // Whisper transcribe
+    // Whisper transcribe here
     const result = await transcribeWithWhisper(wavPath);
 
     fs.unlinkSync(inputPath);

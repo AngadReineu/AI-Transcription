@@ -8,19 +8,18 @@ const AllFeature = () => {
     return (
         <div className="min-h-screen flex flex-col">
 
-            {/* HEADER */}
+
             <div className="w-full py-6 bg-white shadow-md">
                 <h2 className="font-semibold text-2xl text-gray-700 ml-6">
                     Explore All Our Features
                 </h2>
             </div>
 
-            {/* GRID */}
             <div className="container mx-auto px-6 py-10 
                       grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
                       gap-10">
 
-                {/* CARD STYLE */}
+               
                 {[
                     {
                         link: "/live",
@@ -54,9 +53,8 @@ const AllFeature = () => {
 
             </div>
 
-            {/* FOOTER SPACE */}
+
             <div className="mt-auto">
-                {/* <Footer /> */}
             </div>
 
         </div>

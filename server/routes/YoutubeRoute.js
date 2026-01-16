@@ -11,7 +11,7 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 
 const router = express.Router();
 
-// === Convert to WAV (same as upload route) ===
+
 function convertToWav(inputPath) {
   return new Promise((resolve, reject) => {
     const outputPath = inputPath + ".wav";
@@ -44,22 +44,22 @@ router.post("/", async (req, res) => {
     const fileBase = `${Date.now()}`;
     const outputFile = path.join(outputDir, `${fileBase}.webm`);
 
-    // === yt-dlp download clean + stable ===
+    
     await ytdlp(url, {
       output: outputFile,
       format: "bestaudio",
-      ffmpegLocation: ffmpegPath, // critical fix
+      ffmpegLocation: ffmpegPath, 
     });
 
     console.log("🎵 Download complete:", outputFile);
 
-    // Convert → WAV
+    
     const wavPath = await convertToWav(outputFile);
 
-    // Whisper
+   
     const result = await transcribeWithWhisper(wavPath);
 
-    // Cleanup
+    
     fs.unlinkSync(outputFile);
     fs.unlinkSync(wavPath);
 

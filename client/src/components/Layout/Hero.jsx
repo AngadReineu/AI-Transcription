@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="relative w-full overflow-hidden">
       {/* Background Video */}
       <video
-        className="w-full h-[450px] md:h-[650px] lg:h-[780px] object-cover"
+        className="w-full h-[450px] md:h-[650px] lg:h-[1150px] object-cover"
         src={carVideo}
         autoPlay
         loop

@@ -78,7 +78,7 @@ function Footer() {
 
                     </ul>
                 </div>
-                {/* follow us social */}
+                {/* follow us */}
 
                 <div>
                     <h3 className="text-lg text-gray-800 mb-4"> Follow Us</h3>

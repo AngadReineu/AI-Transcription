@@ -13,9 +13,9 @@ async function transcribeWithWhisper(filePath) {
       { headers: form.getHeaders(), maxBodyLength: Infinity}
     );
 
-    return response.data; // MUST return full object so .segments is available
+    return response.data; 
   } catch (err) {
-    console.error("❌ Whisper HTTP error:", err.message, err.response?.data);
+    console.error(" Whisper HTTP error:", err.message, err.response?.data);
     throw err;
   }
 }

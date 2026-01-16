@@ -21,7 +21,7 @@ connectDataBase();
 
 // Default route
 app.get("/", (req, res) => {
-  res.send("🎉 Welcome to the Transcription API!");
+  res.send("Welcome to the Transcription API!");
 });
 
 // REST routes
@@ -37,6 +37,6 @@ setupLiveWS(server);
 
 const PORT = process.env.PORT || 9000;
 server.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
-  console.log("🧠 Whisper Live WS → ws://localhost:9000/api/live-whisper");
+  console.log(`Server running on http://localhost:${PORT}`);
+  console.log("Whisper Live WS → ws://localhost:9000/api/live-whisper");
 });

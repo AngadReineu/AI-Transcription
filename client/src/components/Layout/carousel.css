@@ -1,13 +1,10 @@
-/* Remove global body edits — keep it safe for your whole site */
 
-/* Container for stacking carousels vertically */
 .carousel-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers horizontally */
-  gap: 20px; /* space between carousels */
+  align-items: center; 
+  gap: 20px; 
   padding: 40px 0;
-  /* background: #111; keeps it dark but local */
   background: rgba(73, 73, 73, 0.35);
   backdrop-filter: blur(2px);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -24,7 +21,6 @@
   mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
 }
 
-/* Animation logic */
 .scroll div {
   white-space: nowrap;
   animation: animate var(--t) linear infinite;
